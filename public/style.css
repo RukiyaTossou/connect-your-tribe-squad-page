@@ -1,0 +1,75 @@
+:root {
+    /* colors */
+    --h1-text-color:#fff;
+    --h2-text-color:#000;
+    --h3-text-color:#000;
+
+    --p-text-color-normal:#000;
+    --p-text-color-light:#fff;
+    --background-color-cirkel:#cfcfcf;
+    --background-color-body:#bfbfbf;
+    
+    /* fonts */
+    --h1-text-font:"Squada One", sans-serif;
+    --h2-text-font:"Protest strike", sans-serif;
+    --p-text-font: "Source Sans 3", sans-serif;
+
+    /* padding */
+    --padidng-grid-border:1.5rem;
+
+}
+/* imports */
+
+
+/* tekst */
+h1,h2,h3 {
+    font-family: var(--h1-text-font);
+    font-style: normal;
+}
+
+p {
+    font-family: var(--p-text-font);
+}
+
+.ul-personen{
+    list-style: none;
+    display: none;
+
+}
+/* grid */
+.container {
+    display: grid;
+    gap: 1.5rem;
+    place-items: center;
+    padding:var(--padidng-grid-border)
+
+}
+.cirkel {
+    width: 8rem;
+    height: 8rem;
+    background-color: var(--background-color-cirkel);
+    border-radius: 5rem;
+    position: relative;
+    display: flex;
+    justify-content: center; /* Horizontaal center van  content */
+    align-items: center; /* Verticaal center van content */
+}
+
+.img-paint-splash1 {
+    width: 10rem;
+    height: 17rem; 
+    scale:1.5;
+}
+.paint-splash1 {
+    position:absolute;
+}
+
+#squadD:hover {
+    background-color: aquamarine;
+}
+#squadE:hover {
+    background-color: chocolate;
+}
+#squadF:hover {
+    background-color: blue;
+}
