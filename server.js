@@ -1,3 +1,4 @@
+//1. Opzetten van de server
 // Importeer het npm pakket express uit de node_modules map
 import express from 'express'
 
@@ -8,7 +9,7 @@ import fetchJson from './helpers/fetch-json.js'
 const apiUrl = 'https://fdnd.directus.app/items'
 
 // Haal alle squads uit de WHOIS API op
-const squadData = await fetchJson(apiUrl + '/squad')
+const squadData = await fetchJson(apiUrl + '/squad/?filter={"tribe_id":1}')
 
 // Maak een nieuwe express app aan
 const app = express()
@@ -22,15 +23,19 @@ app.set('views', './views')
 // Gebruik de map 'public' voor statische resources, zoals stylesheets, afbeeldingen en client-side JavaScript
 app.use(express.static('public'))
 
+
+//2. De http request en responses afhandelen
 // Maak een GET route voor de index
+//stap 1
 app.get('/', function (request, response) {
   // Haal alle personen uit de WHOIS API op
+  //stap 2
   fetchJson(apiUrl + '/person').then((apiData) => {
     // apiData bevat gegevens van alle personen uit alle squads
     // Je zou dat hier kunnen filteren, sorteren, of zelfs aanpassen, voordat je het doorgeeft aan de view
-
+    //stap3/4
     // Render index.ejs uit de views map en geef de opgehaalde data mee als variabele, genaamd persons
-    response.render('index', {persons: apiData.data, squads: squadData.data})
+    response.render('index', {persons: apiData.data, squads: squadData.data})//html amken op basis van json
   })
 })
 
@@ -48,6 +53,8 @@ app.get('/person/:id', function (request, response) {
     response.render('person', {person: apiData.data, squads: squadData.data})
   })
 })
+
+//3.Start de webserver
 
 // Stel het poortnummer in waar express op moet gaan luisteren
 app.set('port', process.env.PORT || 8000)

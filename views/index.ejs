@@ -2,31 +2,38 @@
 
 
 <section class="container">
-  <header>
+  <header class="header-title">
     <h1 id="OurTribe-title">Our Tribe</h1>
   </header>
-  <div class="paint-splash1">
-    <img class="img-paint-splash1" src="/images/paint-splash-1.svg" alt="paint-splash">
-  </div>
-  <div class="cirkel" id="squadD">
-    
-    <h2  id="squadD">Squad 1D</h2>
-  </div>
-  <div class="cirkel"  id="squadE">
-    <h2 >Squad 1E</h2>
-  </div>
-  <div class="cirkel"  id="squadF">
-    <h2>Squad 1F</h2>
-  </div>
+  <section class="squads">
+    <!-- <div class="paint-splash1">
+      <img class="img-paint-splash1" src="/images/paint-splash-1.svg" alt="paint-splash">
+    </div>
+    <div class="paint-splash2">
+      <img class="img-paint-splash1" src="/images/paint-splash-1.svg" alt="paint-splash">
+    </div>
+    <div class="paint-splash3">
+      <img class="img-paint-splash1" src="/images/paint-splash-1.svg" alt="paint-splash">
+    </div> -->
 
+    
+  <% squads.forEach(squad => { %>
+    <div class="cirkel" id="<%= squad.name %>">
+      <h2> Squad <%= squad.name %></h2>
+    </div>
+  <% }) %>
+  
+  </section>
+ 
+
+<section>
   <h2>Students</h2>
   <ul class="ul-personen">
     <% persons.forEach(person => { %>
-      <li class="li-persoon-item"><a href="./person/<%= person.id %>"><%= person.name %></li>
+      <li class="li-persoon-item"><a class="a-person-name" href="./person/<%= person.id %>"><%= person.name %></li>
     <% }) %>
   </ul>
 </section>
-
-
+</section>
 
 <%- include('./partials/foot') %>

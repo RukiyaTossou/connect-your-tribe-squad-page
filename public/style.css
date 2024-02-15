@@ -6,7 +6,9 @@
 
     --p-text-color-normal:#000;
     --p-text-color-light:#fff;
-    --background-color-cirkel:#cfcfcf;
+    --background-color-cirkel-:#4eff5a;
+    --background-color-cirkel-E:#ff5959;
+    --background-color-cirkel-F:#b0b2ff;
     --background-color-body:#bfbfbf;
     
     /* fonts */
@@ -33,9 +35,28 @@ p {
 
 .ul-personen{
     list-style: none;
-    display: none;
+    /* display: none; */
 
 }
+
+.li-persoon-item{
+    text-align:center;
+    width:8rem;
+    background-color: #fcc4d5;
+    padding:1.5rem;
+    margin:1rem;
+    border-radius:5rem;
+}
+
+.li-persoon-item:hover {
+    background-color:#dda5b5;
+}
+
+.a-person-name {
+    text-decoration:none;
+    color:black;
+}
+
 /* grid */
 .container {
     display: grid;
@@ -47,12 +68,17 @@ p {
 .cirkel {
     width: 8rem;
     height: 8rem;
-    background-color: var(--background-color-cirkel);
+    background-color: var(--background-color-cirkel-F);
     border-radius: 5rem;
     position: relative;
     display: flex;
     justify-content: center; /* Horizontaal center van  content */
     align-items: center; /* Verticaal center van content */
+    margin:2rem;
+    cursor: pointer;
+}
+.squads{
+    margin: 2rem;
 }
 
 .img-paint-splash1 {
@@ -61,15 +87,60 @@ p {
     scale:1.5;
 }
 .paint-splash1 {
-    position:absolute;
+    /* position:absolute; */
+    /* top:4rem; */
+    opacity:1;
+    margin:2rem;
+    cursor: pointer;
+    
 }
+.paint-splash2 {
+    /* position:absolute; */
+    /* top:14rem; */
+    opacity:1;
+    cursor: pointer;
 
+}
+.paint-splash3 {
+  /* position: relative; */
+    /* top:23rem; */
+    opacity:1;
+    cursor: pointer;
+    
+}
+.img-paint-splash1:hover {
+    fill: #4eff5a;
+}
+.vissable {
+    background-color: aliceblue;
+}
+/* 
 #squadD:hover {
     background-color: aquamarine;
-}
-#squadE:hover {
+} */
+/* #squadE:hover {
     background-color: chocolate;
 }
 #squadF:hover {
     background-color: blue;
-}
+} */
+/* @media (min-width:668px) {
+    .container{
+        grid-template-columns:repeat(8,30rem) ;
+        grid-template-rows:repeat(5,30rem) ;
+    }
+    .header-title {
+        grid-row: 1;
+        grid-column: 3/ 7;
+    }
+    .squads .cirkel {
+        grid-row:3 ;
+        grid-column: 2 / 7;
+    }
+
+    .ul-personen {
+        grid-row: 4;
+        grid-column: 2 / 7;
+    }
+    
+} */
