@@ -17,8 +17,10 @@
     </div> -->
 
     
-  <% squads.forEach(squad => { %>
-    <div class="cirkel" id="<%= squad.name %>">
+  <% squads.forEach(squad => { %> <!-- Voor elke squad in de 'squads' array -->
+    <div class="cirkel" id="<%= squad.name %>">  <!-- Maak een div-element met de class 'cirkel' en de ID gelijk aan de naam van de squad -->
+      <h2> Squad <%= squad.name %></h2> <!-- Voeg de naam van de squad toe als tekst binnen de h2 -->
+    </div>
       <h2> Squad <%= squad.name %></h2>
     </div>
   <% }) %>
@@ -29,8 +31,8 @@
 <section>
   <h2>Students</h2>
   <ul class="ul-personen">
-    <% persons.forEach(person => { %>
-      <li class="li-persoon-item"><a class="a-person-name" href="./person/<%= person.id %>"><%= person.name %></li>
+    <% persons.forEach(person => { %> <!-- Voor elke student in de 'persons' array -->
+      <li class="li-persoon-item"><a class="a-person-name" href="./person/<%= person.id %>"><%= person.name %></li> <!-- link naar de student met hun naam -->
     <% }) %>
   </ul>
 </section>

@@ -14,3 +14,5 @@
 //     // Voeg de klasse 'visible' toe aan de paint splash om deze zichtbaar te maken
 //     paintSplash.classList.add('visible');
 // }
+
+//elke student met squad id 1d moet oranje zijn

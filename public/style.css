@@ -80,6 +80,15 @@ p {
 .squads{
     margin: 2rem;
 }
+.person-info{
+    display: none;
+    background-color: #dda5b5;
+}
+.li-persoon-item:hover .person-info {
+    display: block;
+}
+
+
 
 .img-paint-splash1 {
     width: 10rem;
