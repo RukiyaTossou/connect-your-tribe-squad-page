@@ -18,9 +18,7 @@
 
     /* padding */
     --padidng-grid-border:1.5rem;
-
 }
-/* imports */
 
 
 /* tekst */
@@ -36,16 +34,15 @@ p {
 .ul-personen{
     list-style: none;
     /* display: none; */
-
 }
 
 .li-persoon-item{
     text-align:center;
-    width:8rem;
+    width:10rem;
     background-color: #fcc4d5;
     padding:1.5rem;
     margin:1rem;
-    border-radius:5rem;
+    border-radius:3rem;
 }
 
 .li-persoon-item:hover {
@@ -63,8 +60,8 @@ p {
     gap: 1.5rem;
     place-items: center;
     padding:var(--padidng-grid-border)
-
 }
+
 .cirkel {
     width: 8rem;
     height: 8rem;
@@ -77,52 +74,69 @@ p {
     margin:2rem;
     cursor: pointer;
 }
+
 .squads{
-    margin: 2rem;
+    align-items:center;
+    align-content:center;
+    height: 30rem;
 }
+
 .person-info{
     display: none;
     background-color: #dda5b5;
 }
+
 .li-persoon-item:hover .person-info {
     display: block;
 }
-
-
 
 .img-paint-splash1 {
     width: 10rem;
     height: 17rem; 
     scale:1.5;
 }
+
 .paint-splash1 {
-    /* position:absolute; */
-    /* top:4rem; */
-    opacity:1;
-    margin:2rem;
-    cursor: pointer;
+    position:relative;
+    bottom:33rem;
+    left:1rem;
+    z-index:-1;
     
+
+    cursor: pointer;  
 }
+
 .paint-splash2 {
     /* position:absolute; */
     /* top:14rem; */
-    opacity:1;
+    
+    position:relative;
+    bottom:40rem;
+    left:1rem;
+     z-index:-1;
     cursor: pointer;
 
 }
+
 .paint-splash3 {
   /* position: relative; */
     /* top:23rem; */
+    position:relative;
+    bottom:47.5rem;
+    left:1rem;
+    z-index:-1;
     opacity:1;
-    cursor: pointer;
-    
+    cursor: pointer; 
 }
+
 .img-paint-splash1:hover {
     fill: #4eff5a;
 }
+
 .vissable {
     background-color: aliceblue;
 }
+
 /* 
 #squadD:hover {
     background-color: aquamarine;
