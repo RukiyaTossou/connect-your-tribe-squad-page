@@ -1,7 +1,21 @@
 <%- include('./partials/head') %>
 
-<a class="-button-back" href="/">Back</a>
+<a class="button-back" href="/">Back</a>
+<h1><%= person.name %> <%= person.surname %></h1>
+<h2>Huidige berichten</h2>
+<ul>
+    <% messages.forEach(message => { %> 
+    <li><%= message %></li>
+    <% }) %>
+</ul>
 
+<form method="post" action="/person/<%= person.id %>">
+    <label>
+        Plaats bericht:
+        <textarea required name="message"></textarea>
+    </label>
+    <button type="submit"> Verstuur</button>    
+</form>
 
 
 <%- include('./partials/foot') %>

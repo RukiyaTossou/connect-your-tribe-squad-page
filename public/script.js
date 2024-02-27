@@ -1,18 +1,26 @@
-// // alle knoppen hebben een paint splash
-// // Als je over de cirkel hoverd wordt de splash "vissable"
-// //elke cirkel heeft zn eigen kleur en splash. 
-// let squadButton = document.querySelector('.cirkel');
+// squad names als button met squad id 
+//personen met squad id 
+//als er op de knop word gedrukt met een bepaald id, moet er voor dat id gezocht worden bij elk persoon. 
+//for each persoon in array check: if persoon has id van de gedrukte knop. dan moet persoon.naam worden weergegeven. 
 
-// squadButtons.forEach(button => {
-//     button.addEventListener('mouseover', controlSplash);
-// });
+let squadnameButton = document.querySelector(".squadname");
+let personList = document.querySelector(".ul-personen");
+let person = document.querySelector(".li-persoon-item")
 
-// // Event handler functie
-// function controlSplash() {
-//     // Selecteer de paint splash binnen de huidige knop
-//     let paintSplash = this.querySelector('.paint-splash');
-//     // Voeg de klasse 'visible' toe aan de paint splash om deze zichtbaar te maken
-//     paintSplash.classList.add('visible');
-// }
 
-//elke student met squad id 1d moet oranje zijn
+
+//  click event listener voor elke squadname button
+squadnameButton.forEach(button => {
+    button.addEventListener('click', showSquad);
+});
+
+function showSquad() {
+    personList.forEach(person => {
+        if (person.squad_id === squad.squad_id) {//als het squad id van de persoon overeeen komt met de gekozen squad: vissable (remove hidden)
+            person.classList.remove('hidden'); //toon de persoon
+        } else {
+            person.classList.add('hidden'); //verberg de persoon
+        }
+        
+    });
+}

@@ -1,3 +1,4 @@
+//express setup & start 
 //1. Opzetten van de server
 // Importeer het npm pakket express uit de node_modules map
 import express from 'express'
@@ -8,8 +9,7 @@ import fetchJson from './helpers/fetch-json.js'
 // Stel het basis endpoint in
 const apiUrl = 'https://fdnd.directus.app/items'
 
-// Haal alle squads uit de WHOIS API op
-const squadData = await fetchJson(apiUrl + '/squad/?filter={"tribe_id":1}')
+
 
 // Maak een nieuwe express app aan
 const app = express()
@@ -17,13 +17,21 @@ const app = express()
 // Stel ejs in als template engine
 app.set('view engine', 'ejs')
 
-// Stel de map met ejs templates in
+// Stel de map met ejs templates inx
 app.set('views', './views')
 
 // Gebruik de map 'public' voor statische resources, zoals stylesheets, afbeeldingen en client-side JavaScript
 app.use(express.static('public'))
 
+// Zorgt dat werken met request data makkelijker wordt
+app.use(express.urlencoded({extended: true}))
 
+//roots defineren en data:
+
+// Haal alle squads uit de WHOIS API op
+const squadData = await fetchJson(apiUrl + '/squad/?filter={"tribe_id":1}')
+
+const messages = []
 //2. De http request en responses afhandelen
 // Maak een GET route voor de index
 //stap 1
@@ -39,19 +47,32 @@ app.get('/', function (request, response) {
   })
 })
 
+
+// Maak een GET route voor een detailpagina met een request parameter id
+app.get('/person/:id', function (request, response) {
+  console.log(messages)
+  // Gebruik de request parameter id en haal de juiste persoon uit de WHOIS API op
+  fetchJson(apiUrl + '/person/' + request.params.id).then((apiData) => {
+    // Render person.ejs uit de views map en geef de opgehaalde data mee als variable, genaamd person
+    response.render('person', {
+       person: apiData.data,
+       squads: squadData.data,
+       messages: messages
+      })
+  })
+})
+
 // Maak een POST route voor de index
 app.post('/', function (request, response) {
   // Er is nog geen afhandeling van POST, redirect naar GET op /
   response.redirect(303, '/')
 })
 
-// Maak een GET route voor een detailpagina met een request parameter id
-app.get('/person/:id', function (request, response) {
-  // Gebruik de request parameter id en haal de juiste persoon uit de WHOIS API op
-  fetchJson(apiUrl + '/person/' + request.params.id).then((apiData) => {
-    // Render person.ejs uit de views map en geef de opgehaalde data mee als variable, genaamd person
-    response.render('person', {person: apiData.data, squads: squadData.data})
-  })
+// Maak een POST route voor de index
+app.post('/person/:id', function (request, response) {
+  messages.push(request.body.message)
+  // Er is nog geen afhandeling van POST, redirect naar GET op /
+  response.redirect(303, '/person/' + request.params.id)
 })
 
 //3.Start de webserver

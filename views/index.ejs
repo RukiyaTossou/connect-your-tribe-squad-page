@@ -11,22 +11,28 @@
     <div class="search-div">
       <input class="input-searchbar" type="text" placeholder="Zoek...">
     </div>
-    <div class="selectie-filter">
-      <p>Filters</p><span></span>
+    <div>
+      <select  class="selectie-filter" name="" id="">
+        <option selected value="0">All</option>
+        <option value="1">A-Z</option>
+        <option value="2">Nicknames</option>
+        <option value="3">Avatar</option>
+      </select>
+    
     </div>
   </section>
 
-   
- 
-
-  
-  <p>
-    Kies je squad
+  <p class="kies-text">
+    Kies je squad:
   </p>
+  <button class="scroll-btn up"></button>
+  <button class="scroll-btn down"></button>
+
+
   <div class="all-squadnames">
     <% squads.forEach(squad => { %> <!-- Voor elke squad in de 'squads' array -->
     <div>
-      <p>Squad <%= squad.name %></p>
+      <button class="squadname">Squad <%= squad.name %></button>
     </div>
   <% }) %>
   </div>
@@ -34,16 +40,22 @@
   <!-- 1.filter label 2.searchbar 3. kies sqaud 4. sqaudnames-scrol -->
  </article>
  <article class="rightside-article">
-  <h2>RIGHT</h2>
+  <h2>Studenten</h2>
 
   <!-- stars with student info -->
 <ul class="ul-personen">
     <% persons.forEach(person => { %> <!-- Voor elke student in de 'persons' array -->
       <li class="li-persoon-item" >
-        <h2><%= person.name %></h2>
+        <div class="div-star">
+          <h2><a class="a-persoon" href="./person/<%= person.id %>"> <%= person.name %></a>
+            </h2>
+          <p><%= person.squad_id %></p>
+        </div>
+        
       </li> <!-- link naar de student met hun naam -->
     <% }) %>
   </ul>
+   <!-- <img  class="img-planeet" src="/images/planet-2.png" alt=""> -->
 </article>
 </section>
 
