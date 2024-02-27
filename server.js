@@ -50,7 +50,6 @@ app.get('/', function (request, response) {
 
 // Maak een GET route voor een detailpagina met een request parameter id
 app.get('/person/:id', function (request, response) {
-  console.log(messages)
   // Gebruik de request parameter id en haal de juiste persoon uit de WHOIS API op
   fetchJson(apiUrl + '/person/' + request.params.id).then((apiData) => {
     // Render person.ejs uit de views map en geef de opgehaalde data mee als variable, genaamd person

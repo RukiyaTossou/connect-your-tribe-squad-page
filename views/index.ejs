@@ -22,11 +22,11 @@
     </div>
   </section>
 
-  <p class="kies-text">
+  <!-- <p class="kies-text">
     Kies je squad:
-  </p>
-  <button class="scroll-btn up"></button>
-  <button class="scroll-btn down"></button>
+  </p> -->
+  <!-- <button class="scroll-btn up"></button>
+  <button class="scroll-btn down"></button> -->
 
 
   <div class="all-squadnames">
@@ -45,14 +45,15 @@
   <!-- stars with student info -->
 <ul class="ul-personen">
     <% persons.forEach(person => { %> <!-- Voor elke student in de 'persons' array -->
+      <% if (person.squad_id === 5) { %>
       <li class="li-persoon-item" >
         <div class="div-star">
-          <h2><a class="a-persoon" href="./person/<%= person.id %>"> <%= person.name %></a>
+          <h2><a class="a-persoon glow" href="./person/<%= person.id %>"> <%= person.name %></a>
             </h2>
-          <p><%= person.squad_id %></p>
         </div>
         
       </li> <!-- link naar de student met hun naam -->
+      <% } %>
     <% }) %>
   </ul>
    <!-- <img  class="img-planeet" src="/images/planet-2.png" alt=""> -->
