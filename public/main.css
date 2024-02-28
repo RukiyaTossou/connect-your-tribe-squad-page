@@ -36,6 +36,7 @@
     h1,h2,h3 {
         font-family: var(--h1-text-font);
         font-style: normal;
+        color: var(--h1-text-color);
     }
     .container{
         display: grid;
@@ -130,7 +131,7 @@
 
 
     .rightside-article{
-        background-color: var(--background-color-3);
+        /* background-color: var(--background-color-3); */
         text-align:center;
         height: 100%;
     }
@@ -160,13 +161,18 @@
       
     }
 
+    /* form */
+    .message-text{
+        
+    }
+
     @-webkit-keyframes glow {
         from {
             text-shadow: 0 0 10px #fff
 
         }
         to{
-            text-shadow: 0 0 20px #fff
+            text-shadow: 0 0 30px #fff
         }
     }
    

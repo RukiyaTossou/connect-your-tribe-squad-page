@@ -5,7 +5,13 @@
 
 let squadnameButton = document.querySelectorAll(".squadname");
 let personList = document.querySelector(".ul-personen");
-let person = document.querySelectorAll  (".li-persoon-item")
+let person = document.querySelectorAll  (".li-persoon-item");
+
+let sortFilter = document.querySelector('#filter');
+let names = document.querySelectorAll('a-persoon')
+console.log(names)
+
+
 
 
 
@@ -26,3 +32,4 @@ function showSquad() {
         
     });
 }
+

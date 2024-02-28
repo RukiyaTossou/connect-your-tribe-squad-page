@@ -9,8 +9,8 @@
     <% }) %>
 </ul>
 
-<form method="post" action="/person/<%= person.id %>">
-    <label>
+<form id="form-message" method="post" action="/person/<%= person.id %>">
+    <label id="message-text">
         Plaats bericht:
         <textarea required name="message"></textarea>
     </label>

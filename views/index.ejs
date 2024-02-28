@@ -11,15 +11,15 @@
     <div class="search-div">
       <input class="input-searchbar" type="text" placeholder="Zoek...">
     </div>
-    <div>
-      <select  class="selectie-filter" name="" id="">
-        <option selected value="0">All</option>
-        <option value="1">A-Z</option>
-        <option value="2">Nicknames</option>
-        <option value="3">Avatar</option>
-      </select>
-    
-    </div>
+      <div>
+        <select  class="selectie-filter" name="filter" id="filter">
+          <option selected value="0">All</option>
+          <option value="1">A-Z</option>
+          <option value="2">Nicknames</option>
+          <option value="3">Avatar</option>
+        </select>
+      
+      </div>
   </section>
 
   <!-- <p class="kies-text">
@@ -40,7 +40,7 @@
   <!-- 1.filter label 2.searchbar 3. kies sqaud 4. sqaudnames-scrol -->
  </article>
  <article class="rightside-article">
-  <h2>Studenten</h2>
+  <h2 >Studenten</h2>
 
   <!-- stars with student info -->
 <ul class="ul-personen">
@@ -48,7 +48,7 @@
       <% if (person.squad_id === 5) { %>
       <li class="li-persoon-item" >
         <div class="div-star">
-          <h2><a class="a-persoon glow" href="./person/<%= person.id %>"> <%= person.name %></a>
+          <h2><a class="a-perso on glow" href="./person/<%= person.id %>"> <%= person.name %></a>
             </h2>
         </div>
         
